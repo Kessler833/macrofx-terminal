@@ -1,0 +1,79 @@
+/* ══ CB RATES PAGE ══ */
+.rates-page {
+  display: flex; flex-direction: column;
+  height: 100%; overflow: hidden;
+}
+.rates-body {
+  flex: 1; overflow: auto; padding: 20px;
+  display: flex; flex-direction: column; gap: 20px;
+}
+.rates-grid {
+  display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 12px;
+}
+.rate-card {
+  background: var(--surface);
+  border: 1px solid var(--border2);
+  border-radius: 8px; padding: 16px;
+  transition: border-color 0.15s;
+}
+.rate-card:hover { border-color: var(--accent); }
+.rate-card-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.rate-currency {
+  font-size: 18px; font-weight: 700; color: var(--text);
+}
+.rate-cycle {
+  font-size: 9px; font-weight: 700; letter-spacing: 0.6px;
+  padding: 2px 7px; border-radius: 10px;
+}
+.rate-cycle.hiking  { background: rgba(166,227,161,0.15); color: var(--green); border:1px solid rgba(166,227,161,0.3); }
+.rate-cycle.cutting { background: rgba(239,83,80,0.15);   color: var(--red);   border:1px solid rgba(239,83,80,0.3); }
+.rate-cycle.hold    { background: rgba(108,112,134,0.15); color: var(--muted); border:1px solid var(--border2); }
+
+.rate-value {
+  font-size: 28px; font-weight: 700;
+  color: var(--text); margin-bottom: 4px;
+  font-variant-numeric: tabular-nums;
+}
+.rate-bank { font-size: 10px; color: var(--muted); margin-bottom: 8px; }
+.rate-next {
+  font-size: 10px; color: var(--faint);
+  display: flex; align-items: center; gap: 5px;
+}
+.rate-trend {
+  display: inline-block; font-size: 14px;
+  margin-left: 4px;
+}
+
+.differential-table-wrap {
+  overflow: auto;
+}
+.differential-title {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  color: var(--faint); margin-bottom: 10px;
+}
+.diff-table {
+  border-collapse: collapse;
+  font-size: 11px;
+  width: auto;
+}
+.diff-table th, .diff-table td {
+  padding: 7px 12px;
+  border: 1px solid var(--border);
+  text-align: center;
+  min-width: 60px;
+}
+.diff-table th {
+  background: var(--surface2); color: var(--faint);
+  font-size: 9px; font-weight: 700; letter-spacing: 0.6px;
+}
+.diff-table .diff-cell {
+  font-weight: 600; font-variant-numeric: tabular-nums;
+}
+.diff-positive { color: var(--green); }
+.diff-negative { color: var(--red); }
+.diff-zero     { color: var(--faint); }

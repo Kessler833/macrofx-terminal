@@ -1,0 +1,107 @@
+/* ══ HEATMAP PAGE ══ */
+.heatmap-page {
+  display: flex; flex-direction: column;
+  height: 100%; overflow: hidden;
+}
+
+.heatmap-toolbar {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 14px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.heatmap-toolbar .toolbar-title {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 0.8px; text-transform: uppercase;
+  color: var(--muted);
+}
+
+.heatmap-toolbar .sep { width: 1px; height: 16px; background: var(--border2); }
+
+.heatmap-toolbar .update-time {
+  font-size: 10px; color: var(--faint);
+  margin-left: auto;
+}
+
+.bias-filter {
+  display: flex; gap: 4px;
+}
+.bias-btn {
+  padding: 3px 10px; border-radius: 4px;
+  font-size: 10px; font-weight: 600;
+  border: 1px solid var(--border2);
+  background: transparent; color: var(--muted);
+  transition: all 0.15s; cursor: pointer;
+}
+.bias-btn.active-all  { border-color: var(--accent); color: var(--accent); background: rgba(122,162,247,0.1); }
+.bias-btn.active-bull { border-color: var(--green);  color: var(--green);  background: rgba(166,227,161,0.1); }
+.bias-btn.active-bear { border-color: var(--red);    color: var(--red);    background: rgba(239,83,80,0.1); }
+.bias-btn.active-neut { border-color: var(--muted);  color: var(--text);   background: rgba(108,112,134,0.1); }
+
+.heatmap-body {
+  flex: 1; overflow: auto;
+  padding: 0;
+}
+
+.heatmap-table {
+  width: 100%; border-collapse: collapse;
+  font-size: 11px;
+}
+
+.heatmap-table th {
+  background: var(--surface2);
+  color: var(--faint);
+  font-size: 9px; font-weight: 700; letter-spacing: 0.8px;
+  text-transform: uppercase;
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  position: sticky; top: 0; z-index: 2;
+  white-space: nowrap;
+}
+.heatmap-table th:first-child { text-align: left; min-width: 70px; }
+.heatmap-table th:nth-child(2) { min-width: 80px; }
+.heatmap-table th:nth-child(3) { min-width: 60px; }
+
+.heatmap-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--border);
+  border-right: 1px solid var(--border);
+  text-align: center;
+  transition: background 0.15s;
+}
+
+.heatmap-table tr:hover td { filter: brightness(1.15); }
+
+.hm-symbol {
+  font-size: 13px; font-weight: 700;
+  color: var(--text); text-align: left;
+}
+
+.hm-bias { text-align: left !important; }
+.hm-score { font-weight: 700; font-size: 13px; font-variant-numeric: tabular-nums; }
+
+.hm-cell {
+  font-size: 11px; font-weight: 600;
+  min-width: 36px; min-height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: 3px;
+  margin: auto;
+  width: 34px; height: 30px;
+}
+
+.factor-legend {
+  display: flex; gap: 16px; align-items: center;
+  padding: 8px 14px;
+  background: var(--surface2);
+  border-top: 1px solid var(--border);
+  font-size: 10px; color: var(--muted);
+  flex-shrink: 0; flex-wrap: wrap;
+}
+.legend-dot {
+  width: 8px; height: 8px; border-radius: 2px;
+  display: inline-block; margin-right: 4px;
+}
