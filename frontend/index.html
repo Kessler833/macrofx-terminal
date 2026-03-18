@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MacroFX Terminal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./core/base.css">
+  <link rel="stylesheet" href="./core/components.css">
+  <link rel="stylesheet" href="./pages/heatmap/heatmap.css">
+  <link rel="stylesheet" href="./pages/signals/signals.css">
+  <link rel="stylesheet" href="./pages/rates/rates.css">
+  <link rel="stylesheet" href="./pages/calendar/calendar.css">
+  <link rel="stylesheet" href="./pages/pairs/pairs.css">
+  <link rel="stylesheet" href="./pages/config/config.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/lightweight-charts@4.2.0/dist/lightweight-charts.standalone.production.js"></script>
+</head>
+<body>
+
+  <nav id="sidebar">
+    <div id="logo">
+      <svg class="logo-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" aria-label="MacroFX">
+        <rect x="2" y="2" width="9" height="9" rx="1" fill="#7aa2f7" opacity="0.9"/>
+        <rect x="13" y="2" width="9" height="9" rx="1" fill="#7aa2f7" opacity="0.5"/>
+        <rect x="2" y="13" width="9" height="9" rx="1" fill="#7aa2f7" opacity="0.5"/>
+        <rect x="13" y="13" width="9" height="9" rx="1" fill="#7aa2f7" opacity="0.2"/>
+      </svg>
+      <span class="logo-text">MacroFX</span>
+    </div>
+    <ul id="nav-links">
+      <li class="nav-item active" data-page="heatmap">
+        <span class="nav-icon">🌡️</span><span class="nav-label">Heatmap</span>
+      </li>
+      <li class="nav-item" data-page="signals">
+        <span class="nav-icon">⚡</span><span class="nav-label">Signals</span>
+      </li>
+      <li class="nav-item" data-page="rates">
+        <span class="nav-icon">🏦</span><span class="nav-label">CB Rates</span>
+      </li>
+      <li class="nav-item" data-page="calendar">
+        <span class="nav-icon">📅</span><span class="nav-label">Calendar</span>
+      </li>
+      <li class="nav-item" data-page="pairs">
+        <span class="nav-icon">📈</span><span class="nav-label">Pairs</span>
+      </li>
+      <li class="nav-item" data-page="config">
+        <span class="nav-icon">⚙️</span><span class="nav-label">Config</span>
+      </li>
+    </ul>
+    <button id="sidebar-toggle" title="Collapse sidebar">◀</button>
+  </nav>
+
+  <main id="main-content">
+    <div id="page-heatmap" class="page active"></div>
+    <div id="page-signals" class="page"></div>
+    <div id="page-rates" class="page"></div>
+    <div id="page-calendar" class="page"></div>
+    <div id="page-pairs" class="page"></div>
+    <div id="page-config" class="page"></div>
+  </main>
+
+  <script src="./core/state.js"></script>
+  <script src="./core/api.js"></script>
+  <script src="./core/router.js"></script>
+  <script src="./core/macro-engine.js"></script>
+  <script src="./pages/heatmap/heatmap.js"></script>
+  <script src="./pages/signals/signals.js"></script>
+  <script src="./pages/rates/rates.js"></script>
+  <script src="./pages/calendar/calendar.js"></script>
+  <script src="./pages/pairs/pairs.js"></script>
+  <script src="./pages/config/config.js"></script>
+  <script src="./core/app.js"></script>
+</body>
+</html>
